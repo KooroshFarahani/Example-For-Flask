@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>پروفایل کاربر</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: right;
+        }
+        .profile-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .access-status {
+            color: {% if age > 18 %}green{% else %}red{% endif %};
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>پروفایل {{ username }}</h1>
+        <p><strong>سن:</strong> {{ age }}</p>
+        <p><strong>علایق:</strong></p>
+        <ul>
+            {% for interest in interests %}
+                <li>{{ interest }}</li>
+            {% endfor %}
+        </ul>
+        <p class="access-status">
+            <strong>وضعیت دسترسی:</strong> 
+            {% if age > 18 %}
+                دسترسی کامل
+            {% else %}
+                دسترسی محدود
+            {% endif %}
+        </p>
+    </div>
+</body>
+</html>

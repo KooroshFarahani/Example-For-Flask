@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>نظرسنجی</title>
+</head>
+<body>
+    <h2>لطفاً نظر خود را با ما به اشتراک بگذارید</h2>
+    <form method="POST" action="/result">
+        <label>نام شما:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>سن شما:</label><br>
+        <input type="number" name="age" required><br><br>
+
+        <label>نظر شما درباره سایت:</label><br>
+        <textarea name="feedback" placeholder="نظر شما..."></textarea><br><br>
+
+        <button type="submit">ارسال نظر</button>
+    </form>
+</body>
+</html>
