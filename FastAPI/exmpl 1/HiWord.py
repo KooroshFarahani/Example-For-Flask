@@ -50,10 +50,14 @@ def Sum(num1:float=None,num2:float=None):
 
 @app.post('/user')
 def create_user(user:user):
+    # بررسی وجود ایمیل در لیست کاربران
+    for exist_user in users:
+        if exist_user.email == user.email:
+            return {"ERROR":"this email is exist"}
+    # بررسی سن کاربر
     if user.age<13:
         return{"ERROR":"User most older than 13"}
-    elif user.email in users:
-        return{"ERROR":"this email used befor"}
+    # افزودن کاربر به لیست
     else:
         users.append(user)
         return {
